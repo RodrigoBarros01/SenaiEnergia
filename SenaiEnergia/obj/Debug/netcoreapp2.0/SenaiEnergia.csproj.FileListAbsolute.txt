@@ -1,0 +1,11 @@
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\bin\Debug\netcoreapp2.0\SenaiEnergia.deps.json
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\bin\Debug\netcoreapp2.0\SenaiEnergia.runtimeconfig.json
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\bin\Debug\netcoreapp2.0\SenaiEnergia.runtimeconfig.dev.json
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\bin\Debug\netcoreapp2.0\SenaiEnergia.dll
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\obj\Debug\netcoreapp2.0\SenaiEnergia.csprojResolveAssemblyReference.cache
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\obj\Debug\netcoreapp2.0\SenaiEnergia.csproj.CoreCompileInputs.cache
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\obj\Debug\netcoreapp2.0\SenaiEnergia.AssemblyInfoInputs.cache
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\obj\Debug\netcoreapp2.0\SenaiEnergia.AssemblyInfo.cs
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\bin\Debug\netcoreapp2.0\SenaiEnergia.pdb
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\obj\Debug\netcoreapp2.0\SenaiEnergia.dll
+C:\Users\rodrigo.barros\Desktop\SenaiEnergia\SenaiEnergia\obj\Debug\netcoreapp2.0\SenaiEnergia.pdb
