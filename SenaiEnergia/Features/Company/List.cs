@@ -1,12 +1,12 @@
-﻿using AutoMapper.QueryableExtensions;
-using MediatR;
+﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SenaiEnergia.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SenaiEnergia.Features.Equipment
+namespace SenaiEnergia.Features.Company
 {
     public class List
     {
@@ -17,16 +17,15 @@ namespace SenaiEnergia.Features.Equipment
 
         public class Result
         {
+            public List<Company> Companies { get; set; }
 
-            public List<Equipment> Equipments { get; set; }
-
-            public class Equipment
+            public class Company
             {
+                public int Id { get; set; }
                 public string Name { get; set; }
-                public double EletricPower { get; set; }
             }
         }
-        
+
         public class Handler : AsyncRequestHandler<Query, Result>
         {
             private readonly Db _db;
@@ -38,21 +37,18 @@ namespace SenaiEnergia.Features.Equipment
 
             protected override async Task<Result> HandleCore(Query message)
             {
-                var equipments = await _db.Equipments.Select(a => new Result.Equipment()
+                var companies = await _db.Companies.Select(a => new Result.Company()
                 {
-                    EletricPower = a.EletricPower,
+                    Id = a.Id,
                     Name = a.Name
                 }).ToListAsync();
-                
 
+               
                 return new Result
                 {
-                    Equipments = equipments
+                    Companies = companies
                 };
             }
-
         }
-
-
     }
 }

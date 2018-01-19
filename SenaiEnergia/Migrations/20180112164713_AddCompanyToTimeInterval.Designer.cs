@@ -11,27 +11,15 @@ using System;
 namespace SenaiEnergia.Migrations
 {
     [DbContext(typeof(Db))]
-    partial class DbModelSnapshot : ModelSnapshot
+    [Migration("20180112164713_AddCompanyToTimeInterval")]
+    partial class AddCompanyToTimeInterval
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("SenaiEnergia.Domain.Company", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("CompanyID");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Company");
-                });
 
             modelBuilder.Entity("SenaiEnergia.Domain.Equipment", b =>
                 {
@@ -54,7 +42,7 @@ namespace SenaiEnergia.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnName("TimeIntervalID");
 
-                    b.Property<int?>("CompanyId");
+                    b.Property<string>("Company");
 
                     b.Property<TimeSpan>("EndTime");
 
@@ -66,16 +54,7 @@ namespace SenaiEnergia.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
-
                     b.ToTable("TimeInterval");
-                });
-
-            modelBuilder.Entity("SenaiEnergia.Domain.TimeInterval", b =>
-                {
-                    b.HasOne("SenaiEnergia.Domain.Company", "Company")
-                        .WithMany("TimeIntervals")
-                        .HasForeignKey("CompanyId");
                 });
 #pragma warning restore 612, 618
         }

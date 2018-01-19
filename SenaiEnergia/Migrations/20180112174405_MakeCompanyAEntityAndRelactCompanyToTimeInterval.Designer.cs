@@ -11,9 +11,10 @@ using System;
 namespace SenaiEnergia.Migrations
 {
     [DbContext(typeof(Db))]
-    partial class DbModelSnapshot : ModelSnapshot
+    [Migration("20180112174405_MakeCompanyAEntityAndRelactCompanyToTimeInterval")]
+    partial class MakeCompanyAEntityAndRelactCompanyToTimeInterval
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
