@@ -36,7 +36,7 @@ namespace SenaiEnergia.Features.Calculation
                 RuleFor(a => a.CompanyId).NotNull().NotEmpty().NotEqual(0).GreaterThan(0);
 
                 RuleFor(a => a.StartUse).NotNull().LessThanOrEqualTo(new TimeSpan(23, 59, 59)).GreaterThanOrEqualTo(new TimeSpan(0, 0, 0));
-                
+
             }
         }
 
@@ -241,13 +241,12 @@ namespace SenaiEnergia.Features.Calculation
 
                 var companyTimes = await _db.TimeIntervals.Where(d => d.CompanyId == message.CompanyId).ToArrayAsync();
                 var conventionalValue = (companyTimes.FirstOrDefault(a => a.Type == "Convencional"))?.Value ?? 0m;
-                var weekendValue = (companyTimes.FirstOrDefault(a => a.Type == "FinalDeSemana"))?.Value ?? 0m;
+                var weekendValue = (companyTimes.Where(a => a.Type == "Branca").Min(a => a.Value));
                 while (cursor < endDate)
                 {
                     var timeInterval = companyTimes.FirstOrDefault(a => CheckTimeCollision(a, cursor));
                     if (timeInterval != null)
                     {
-                        //result.WhiteRateMonth += (message.Quantity * (decimal)message.Power * (1 / 60m) / 1000m) * (timeInterval.Value / 1000m) * message.DaysOfUse;
                         result.WhiteRateMonth += (message.Quantity * (decimal)message.Power * ((1 / 60m) / 1000m) * (timeInterval.Value / 1000m) * 22) + ((message.Quantity * (decimal)message.Power * (1 / 60m) / 1000m) * (weekendValue / 1000m) * 8);
 
                         result.ConventionalRateMonth += (message.Quantity * (decimal)message.Power * (1 / 60m) / 1000m) * (conventionalValue / 1000m) * message.DaysOfUse;
@@ -256,7 +255,8 @@ namespace SenaiEnergia.Features.Calculation
                     cursor = cursor.AddMinutes(1);
                 }
                 result.ComputationTime = DateTime.Now - start;
-                result.WhiteRateMonth = result.WhiteRateMonth * message.DaysOfUse / 30;
+                result.WhiteRateMonth = Math.Round((result.WhiteRateMonth * message.DaysOfUse / 30), 2);
+                result.ConventionalRateMonth = Math.Round(result.ConventionalRateMonth, 2);
                 return result;
             }
 
