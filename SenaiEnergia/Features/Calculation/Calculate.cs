@@ -45,7 +45,6 @@ namespace SenaiEnergia.Features.Calculation
         {
             public decimal ConventionalRateMonth { get; set; }
             public decimal WhiteRateMonth { get; set; }
-            public TimeSpan ComputationTime { get; set; }
         }
 
 
@@ -254,7 +253,6 @@ namespace SenaiEnergia.Features.Calculation
 
                     cursor = cursor.AddMinutes(1);
                 }
-                result.ComputationTime = DateTime.Now - start;
                 result.WhiteRateMonth = Math.Round((result.WhiteRateMonth * message.DaysOfUse / 30), 2);
                 result.ConventionalRateMonth = Math.Round(result.ConventionalRateMonth, 2);
                 return result;
