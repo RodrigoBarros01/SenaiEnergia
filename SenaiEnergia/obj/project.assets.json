@@ -13286,7 +13286,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rodrigo.barros\\.nuget\\packages\\": {},
+    "C:\\Users\\RodrigodeBarros\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13295,17 +13295,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\rodrigo.barros\\Desktop\\SenaiEnergia\\SenaiEnergia\\SenaiEnergia.csproj",
+      "projectUniqueName": "C:\\Users\\RodrigodeBarros\\source\\repos\\SenaiEnergia\\SenaiEnergia\\SenaiEnergia.csproj",
       "projectName": "SenaiEnergia",
-      "projectPath": "C:\\Users\\rodrigo.barros\\Desktop\\SenaiEnergia\\SenaiEnergia\\SenaiEnergia.csproj",
-      "packagesPath": "C:\\Users\\rodrigo.barros\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rodrigo.barros\\Desktop\\SenaiEnergia\\SenaiEnergia\\obj\\",
+      "projectPath": "C:\\Users\\RodrigodeBarros\\source\\repos\\SenaiEnergia\\SenaiEnergia\\SenaiEnergia.csproj",
+      "packagesPath": "C:\\Users\\RodrigodeBarros\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\RodrigodeBarros\\source\\repos\\SenaiEnergia\\SenaiEnergia\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rodrigo.barros\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\RodrigodeBarros\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

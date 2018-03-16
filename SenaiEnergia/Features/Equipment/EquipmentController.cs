@@ -29,5 +29,16 @@ namespace SenaiEnergia.Features.Equipment
             return Ok(model);
         }
 
+
+        [HttpPost]
+        [Route("equipments")]
+        public async Task<IActionResult> Create([FromBody]Create.Command command)
+        {
+            await _mediator.Send(command);
+            return Created("Created!!", command);
+
+        }
+
+
     }
 }
